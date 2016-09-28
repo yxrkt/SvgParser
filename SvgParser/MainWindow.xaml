@@ -1,12 +1,25 @@
-﻿<Window x:Class="SvgParser.MainWindow"
+﻿<Window x:Class="SvgParserSample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SvgParser"
+        xmlns:local="clr-namespace:SvgParserSample"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+
+    <Window.Resources>
+        <sys:String x:Key="Darkside">Somethingsomethingsomething</sys:String>
+    </Window.Resources>
+    
+    <Grid x:Name="grid">
+        <Grid.Resources>
+            <DataTemplate x:Key="TestTemplate">
+                <TextBlock Text="{StaticResource Darkside}"/>
+            </DataTemplate>
+        </Grid.Resources>
+        <StackPanel x:Name="stackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Path Data="M12.4,1.1v80.3a14 14 45 1 0 17,17H122l-33.2-29.2 q-40,0 -40,-40 C36.1,22,24.2,11.5,12.4,1.1z" Fill="Orange" />
+        </StackPanel>
     </Grid>
 </Window>
